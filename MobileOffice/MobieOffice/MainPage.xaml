@@ -23,49 +23,257 @@
         </Grid.RowDefinitions>
         <Image Grid.Column="2" x:Name="image" Source="Res/bankingnearby.png"/>
         <Image  x:Name="image1" Source="Res/truck.png" />
-        <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition/>
 
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
+        <Hub Grid.Row="1" Grid.ColumnSpan="3">
+            <HubSection Width="650">
+                <HubSection.Header>
+                    <TextBlock Text="Location" Foreground="White"/>
+                </HubSection.Header>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="600"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-            </Grid.RowDefinitions>
-            <Button Grid.Row="1" Content="Find nearby UniCredit office" HorizontalAlignment="Stretch" Click="Button_Click">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFF8693" Offset="0.157"/>
-                        <GradientStop Color="{StaticResource ÛniCredit}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Button Grid.Row="2" Content="Ask for appointment" HorizontalAlignment="Stretch">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFF8693" Offset="0.157"/>
-                        <GradientStop Color="{StaticResource ÛniCredit}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Button Grid.Row="3" Content="Cash order" HorizontalAlignment="Stretch">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFF8693" Offset="0.157"/>
-                        <GradientStop Color="{StaticResource ÛniCredit}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Maps:MapControl Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"/>
-        </Grid>
+                        <Maps:MapControl Grid.Row="0" Grid.ColumnSpan="2" Height="600" Width="600">
+                            <ItemsPresenter Height="100" Width="100"/>
+                        </Maps:MapControl>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Your Location:" Height="25"
+                                       Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="1" 
+                                        Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                      Height="25" Width="300"/>
+                        <Button Grid.Row="2" Grid.ColumnSpan="2"
+                                    Height="50" Content="Find nearby UniCredit office" HorizontalAlignment="Stretch" Click="Button_Click">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFFF8693" Offset="0.157"/>
+                                    <GradientStop Color="{StaticResource ÛniCredit}" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                    </Grid>
 
 
+                </DataTemplate>
+            </HubSection>
+            <HubSection Width="650">
+                <HubSection.Header>
+                    <TextBlock Text="Appointment " Foreground="White"/>
+                </HubSection.Header>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="600"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="600"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <CalendarView Grid.Row="0" />
+                            <Grid Grid.Row="1" Margin="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Select Reason:" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <!--<TextBox Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>-->
+                                <ComboBox Grid.Column="1" Width="300" Height="35">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="House loan"/>
+                                        <ComboBoxItem Content="Car loan"/>
+                                        <ComboBoxItem Content="Insurance"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                            </Grid>
+                            <Grid Grid.Row="2" Margin="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="Name" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="1" Text="Surame" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="2" Text="Address" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="3" Text="Zip" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="4" Text="City" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                            </Grid>
+                        </Grid>
+
+
+                        <TextBlock Name="PlaceAppointment" Text=""/>
+                        <Button Grid.Row="3" Grid.ColumnSpan="2"
+                                    Height="50" Content="Ask for appointment" HorizontalAlignment="Stretch" Click="Button_Click_1">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFFF8693" Offset="0.157"/>
+                                    <GradientStop Color="{StaticResource ÛniCredit}" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Width="650">
+                <HubSection.Header>
+                    <TextBlock Text="Order " Foreground="White"/>
+                </HubSection.Header>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="600"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="600"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Margin="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="Select order:" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <!--<TextBox Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>-->
+                                <ComboBox Grid.Row="0" Grid.Column="1" Width="300" Height="35" SelectedIndex="0">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="Foreign Currency"/>
+                                        <ComboBoxItem Content="Coins"/>
+                                        <ComboBoxItem Content="Higher Amounts"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+
+                                <TextBlock Grid.Row="1" Text="Select Currency:" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <!--<TextBox Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>-->
+                                <ComboBox x:Name="Currency" Grid.Row="1" Grid.Column="1" Width="300" Height="35" SelectedIndex="0">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="USD - US dollar"/>
+                                        <ComboBoxItem Content="CHF - Swiss franc"/>
+                                        <ComboBoxItem Content="CZK - Czech koruna"/>
+                                        <ComboBoxItem Content="PLN - Polish zloty"/>
+                                        <ComboBoxItem Content="RUB - Russian rouble"/>
+                                        <ComboBoxItem Content="GBP - Pound Sterling"/>
+                                        <ComboBoxItem Content="CAD - Canadian dollar"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+
+                                <TextBlock Grid.Row="2" Text="Amount:" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                                    <TextBox  Width="150" Height="35"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                                    <TextBlock Margin="10,0" Height="35" Text="{Binding SelectedItem.Content, ElementName=Currency}"
+                                               Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                                </StackPanel>
+               
+                            </Grid>
+                            <Grid Grid.Row="1" Margin="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="Name" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="1" Text="Surame" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="2" Text="Address" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="3" Text="Zip" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBlock Grid.Row="4" Text="City" Height="35" 
+                                               Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Width="300" Height="25"
+                                             Foreground="White" Background="#19171c" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                            </Grid>
+                        </Grid>
+                        
+                        <Button Grid.Row="2" Grid.ColumnSpan="2"
+                                    Height="50" Content="Cash order" HorizontalAlignment="Stretch" Click="Button_Click">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFFF8693" Offset="0.157"/>
+                                    <GradientStop Color="{StaticResource ÛniCredit}" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
     </Grid>
 </Page>

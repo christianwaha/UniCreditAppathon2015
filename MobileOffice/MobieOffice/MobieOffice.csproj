@@ -7,8 +7,8 @@
     <ProjectGuid>{96866764-6F7E-4F5D-80CA-0AEA953FE6D4}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MobieOffice</RootNamespace>
-    <AssemblyName>MobieOffice</AssemblyName>
+    <RootNamespace>MobileOffice</RootNamespace>
+    <AssemblyName>MobileOffice</AssemblyName>
     <DefaultLanguage>de-DE</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>

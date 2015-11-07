@@ -8,6 +8,6 @@ namespace MobieOffice
 {
     public interface IBankConnector
     {
-        void GetBranches();
+        Task GetBranches();
     }
 }
