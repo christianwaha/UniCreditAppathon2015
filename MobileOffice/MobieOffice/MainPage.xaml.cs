@@ -31,7 +31,7 @@ namespace MobieOffice
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
            
-            this.PlaceAppointment.Text = "Thanks for your appointment request!";
+            //.Text = "Thanks for your appointment request!";
         }
     }
 }

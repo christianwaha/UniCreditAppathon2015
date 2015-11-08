@@ -141,7 +141,7 @@
                         </Grid>
 
 
-                        <TextBlock Name="PlaceAppointment" Text=""/>
+                        <!--<TextBlock x:Name="PlaceAppointment" Text=""/>-->
                         <Button Grid.Row="3" Grid.ColumnSpan="2"
                                     Height="50" Content="Ask for appointment" HorizontalAlignment="Stretch" Click="Button_Click_1">
                             <Button.Background>
