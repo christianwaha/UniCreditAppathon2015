@@ -12,17 +12,24 @@ namespace MobieOffice
     {
         public IBankConnector BankConnector { get; set; }
 
+        public string ButtonCashText { get; set; }
+
+        public string ButtonAppointmentText { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
             this.BankConnector = new UniCreditConnector();
+            this.DataContext = this;
+            this.ButtonCashText = "Cash order";
+            this.ButtonAppointmentText = "";
 
 
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            await this.BankConnector.GetBranches();
+           // await this.BankConnector.GetBranches();
 
 
 

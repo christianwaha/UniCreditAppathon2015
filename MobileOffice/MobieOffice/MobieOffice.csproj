@@ -94,6 +94,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Res\bankingnearby.png" />
+    <Content Include="Res\mobilemap.png" />
     <Content Include="Res\truck.png" />
     <None Include="project.json" />
   </ItemGroup>
